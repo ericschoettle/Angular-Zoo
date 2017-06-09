@@ -16,9 +16,10 @@ export class AppComponent implements OnInit {
   constructor(private animalService: AnimalService) { };
 
   ngOnInit(): void {
-    this.getAnimals()
-  }
-  getAnimals(): void {
     this.animalService.getAnimals().then(animals => this.animals = animals)
+  }
+
+  addAnimal(newAnimalFromChild: Animal) {
+    this.animals.push(newAnimalFromChild)
   }
 }

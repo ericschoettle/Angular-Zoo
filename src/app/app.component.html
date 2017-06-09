@@ -9,3 +9,5 @@
   <br>
   <app-edit-animal [animal]="animal"></app-edit-animal>
 </div>
+
+<app-new-animal (newAnimalSender)="addAnimal($event)" ></app-new-animal>

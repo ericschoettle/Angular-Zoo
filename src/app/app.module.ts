@@ -5,12 +5,14 @@ import { FormsModule }  from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
+import { NewAnimalComponent } from './new-animal/new-animal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalListComponent,
-    EditAnimalComponent
+    EditAnimalComponent,
+    NewAnimalComponent
   ],
   imports: [
     BrowserModule,
