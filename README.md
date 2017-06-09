@@ -7,6 +7,7 @@ This application allows a user to keep track of animals at a zoo. It has basic C
 
   * Animals class will reside in animal.model.ts and contain fields for species, name, age, diet, location, caretakers (number), sex, likes, and dislikes. 
   * "Existing animals" will seed the database with three animals.
+  * Animals service will hold the function to make an array of all animals available to components.
   * Animal List component will allow user to see all animals in the zoo.
     * Animal List component will have an edit button allowing users to edit animals. 
   * Animal Edit component will allow users to edit animals using two-way data binding. 
