@@ -3,7 +3,7 @@
   <h1>Welcome to the Zoo!</h1> 
 </div>
 
-<div *ngFor="let animal of animals">
+<div *ngFor="let animal of animals | age">
   <app-animal-list [animal]="animal"></app-animal-list>
   <app-edit-animal [animal]="animal"></app-edit-animal>
 </div>

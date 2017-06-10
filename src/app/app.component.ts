@@ -12,7 +12,7 @@ import { AnimalService } from './shared/animal.service'
 
 export class AppComponent implements OnInit {
   animals: Animal[] = [];
-  debugger
+
   constructor(private animalService: AnimalService) { };
 
   ngOnInit(): void {
