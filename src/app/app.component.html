@@ -1,11 +1,20 @@
 <!--The whole content below can be removed with the new code.-->
-<div>
-  <h1>Welcome to the Zoo!</h1> 
+<div class="container">
+  <div>
+    <h1>Welcome to the Zoo!</h1> 
+  </div>
+
+  <div *ngFor="let animal of animals | maxAge: 5 | minAge: 1">
+    <app-animal-list [animal]="animal"></app-animal-list>
+    <div *ngIf="selectedAnimal != animal">
+      <button (click)="editAnimal(animal)" class="btn">Edit {{animal.name}}</button>
+    </div>
+    <div *ngIf="selectedAnimal === animal">
+      <app-edit-animal [animal]="animal"></app-edit-animal>
+      <button (click)="doneEditing()" class="btn">Done Editing</button>
+    </div>
+  </div>
+
+  <app-new-animal (newAnimalSender)="addAnimal($event)" ></app-new-animal>
 </div>
 
-<div *ngFor="let animal of animals | maxAge: 5 | minAge: 1">
-  <app-animal-list [animal]="animal"></app-animal-list>
-  <app-edit-animal [animal]="animal"></app-edit-animal>
-</div>
-
-<app-new-animal (newAnimalSender)="addAnimal($event)" ></app-new-animal>

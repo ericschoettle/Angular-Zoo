@@ -12,9 +12,18 @@ import { AnimalService } from './shared/animal.service'
 
 export class AppComponent implements OnInit {
   animals: Animal[] = [];
+  selectedAnimal: Animal = null
 
   constructor(private animalService: AnimalService) { };
 
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal
+  }
+
+  doneEditing() {
+    debugger
+    this.selectedAnimal = null
+  }
   ngOnInit(): void {
     this.animalService.getAnimals().then(animals => this.animals = animals)
   }
