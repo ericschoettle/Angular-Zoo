@@ -4,11 +4,28 @@
     <h1>Welcome to the Zoo!</h1> 
   </div>
 
-  <div *ngFor="let animal of animals | maxAge: 5 | minAge: 1">
+    <div>
+      <h3>View animals by age:</h3>
+    <div>
+      <label>Maximum Age: </label>
+      <input type="number" #maxAge>
+      <button (click)="setMaxAge(maxAge.value)">Set Maximum  age</button>
+    </div>
+
+    <div>
+      <label>Minimum Age: </label>
+      <input type="number" #minAge>
+      <button (click)="setMinAge(minAge.value)">Set Minimum age</button>
+    </div>
+  </div>
+  
+  <div *ngFor="let animal of animals | maxAge: maximumAge | minAge: minimumAge">
+
     <app-animal-list [animal]="animal"></app-animal-list>
     <div *ngIf="selectedAnimal != animal">
       <button (click)="editAnimal(animal)" class="btn">Edit {{animal.name}}</button>
     </div>
+
     <div *ngIf="selectedAnimal === animal">
       <app-edit-animal [animal]="animal"></app-edit-animal>
       <button (click)="doneEditing()" class="btn">Done Editing</button>

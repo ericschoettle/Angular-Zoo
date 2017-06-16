@@ -13,6 +13,8 @@ import { AnimalService } from './shared/animal.service'
 export class AppComponent implements OnInit {
   animals: Animal[] = [];
   selectedAnimal: Animal = null
+  maximumAge: number = 100
+  minimumAge: number = 0
 
   constructor(private animalService: AnimalService) { };
 
@@ -21,8 +23,15 @@ export class AppComponent implements OnInit {
   }
 
   doneEditing() {
-    debugger
     this.selectedAnimal = null
+  }
+
+  setMaxAge(age) {
+    this.maximumAge = age
+  }
+
+  setMinAge(age) {
+    this.minimumAge = age
   }
   ngOnInit(): void {
     this.animalService.getAnimals().then(animals => this.animals = animals)
